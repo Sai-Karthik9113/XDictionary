@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <h1>Dictionary App</h1>
-      <input value={searchKeyWord} onChange={handleChange} placeholder='Search for a word...' />
+      <input type='text' value={searchKeyWord} onChange={handleChange} placeholder='Search for a word...' />
       <button onClick={handleClick}>
         Search
       </button>
