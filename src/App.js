@@ -11,13 +11,15 @@ function App() {
   }
 
   const handleClick = () => {
-    WordsInDictionary.find((item) => {
-      if (searchKeyWord.toLocaleLowerCase() === item.word.toLocaleLowerCase()) {
-        setKeyWordMeaning(item.meaning);
-      } else {
-        setKeyWordMeaning('Word not found in the dictionary.');
-      }
-    });
+    const foundWord = WordsInDictionary.find((item) =>
+      searchKeyWord.toLocaleLowerCase() === item.word.toLocaleLowerCase()
+    );
+
+    if(foundWord) {
+      setKeyWordMeaning(foundWord.meaning);
+    } else {
+      setKeyWordMeaning('Word not found in the dictionary.');
+    }
   }
 
   return (
